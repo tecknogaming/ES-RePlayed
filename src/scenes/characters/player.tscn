@@ -465,3 +465,5 @@ zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s4g8q")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
