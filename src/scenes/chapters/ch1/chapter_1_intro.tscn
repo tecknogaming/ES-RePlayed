@@ -159,3 +159,4 @@ layer_4/tile_data = PackedInt32Array()
 position = Vector2(-51, 56)
 MOVEMENT_MODE = 1
 Terrain = NodePath("../TileMap")
+type = 0
