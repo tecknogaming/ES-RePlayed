@@ -1,0 +1,348 @@
+[gd_scene load_steps=16 format=3 uid="uid://cnf0kf4dc1dh6"]
+
+[ext_resource type="Texture2D" uid="uid://c6af57mpysu3" path="res://assets/sprites/egg/nest_front.png" id="1_cusg6"]
+[ext_resource type="Script" path="res://src/scripts/chapters/prolouge/prolouge_intro.gd" id="1_spsng"]
+[ext_resource type="Texture2D" uid="uid://bvlpjgl04dsuq" path="res://assets/sprites/egg/nest_back.png" id="2_7pcp0"]
+[ext_resource type="Texture2D" uid="uid://dt1cwvdktx4la" path="res://assets/sprites/egg/eevee_egg.png" id="3_m07aq"]
+[ext_resource type="Texture2D" uid="uid://dh5fwypup3lxe" path="res://assets/sprites/egg/eevee_egg_crack.png" id="4_x08w1"]
+[ext_resource type="Texture2D" uid="uid://d43k16cxsvlg" path="res://assets/BG/prolouge intro BG.png" id="5_045kf"]
+[ext_resource type="FontFile" uid="uid://bxnmcdcway6b5" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="7_7lvry"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj0qa"]
+atlas = ExtResource("4_x08w1")
+region = Rect2(0, 0, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4d4d"]
+atlas = ExtResource("4_x08w1")
+region = Rect2(0, 28, 26, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v52fc"]
+atlas = ExtResource("4_x08w1")
+region = Rect2(0, 84, 26, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buenu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj0qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4d4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v52fc")
+}],
+"loop": false,
+"name": &"crack",
+"speed": 5.0
+}]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_27sgd"]
+lifetime_randomness = 1.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 56.33
+
+[sub_resource type="Animation" id="Animation_embds"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eggs/alan:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0737891]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 115)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/con1:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/con1:theme_override_colors/font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/con1:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Many Years Later..."]
+}
+
+[sub_resource type="Animation" id="Animation_ncljs"]
+resource_name = "egg_cracking"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eggs/alan:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.1, 2.3, 2.5, 2.9, 3.1, 3.3, 3.7, 3.9, 4.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0737891, -0.16283, 0.0737891, 0.0737891, -0.16283, 0.0737891, 0.0737891, -0.16283, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("eggs/alan:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.9, 2.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.7, 4.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1.7, 1.7)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1, 2.7, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(3, 115)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 4.1, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/con1:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.1, 4.7, 5.2, 5.4, 5.7, 6.1, 6.5, 6.8, 7.9, 8, 8.8, 9.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1e-05, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.098, 0.372, 0.372, 0.685, 0.685, 1.0, 1.0, 0.0, 0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/con1:theme_override_colors/font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.1, 7.9, 8.7, 10.1, 10.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/con1:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.1, 7.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["H-hello..?
+Mommy..? D-daddy...?", "Many Years Later..."]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(11.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5ksp"]
+_data = {
+"RESET": SubResource("Animation_embds"),
+"egg_cracking": SubResource("Animation_ncljs")
+}
+
+[node name="Prolouge Intro" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_spsng")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3, 115)
+zoom = Vector2(1.2, 1.2)
+
+[node name="eggs" type="Node2D" parent="."]
+position = Vector2(0, 123)
+scale = Vector2(5, 5)
+
+[node name="nest" type="Sprite2D" parent="eggs"]
+z_index = 1
+texture = ExtResource("1_cusg6")
+
+[node name="back" type="Sprite2D" parent="eggs/nest"]
+z_index = -2
+texture = ExtResource("2_7pcp0")
+
+[node name="egg1" type="Sprite2D" parent="eggs"]
+position = Vector2(-6.8, -1.8)
+rotation = -0.258073
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_m07aq")
+
+[node name="egg2" type="Sprite2D" parent="eggs"]
+position = Vector2(5.8, -1.4)
+rotation = 0.375575
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_m07aq")
+
+[node name="alan" type="AnimatedSprite2D" parent="eggs"]
+position = Vector2(-1.6, 6)
+rotation = 0.0737891
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_buenu")
+animation = &"crack"
+speed_scale = 0.3
+offset = Vector2(0, -7)
+
+[node name="egg crack" type="GPUParticles2D" parent="eggs/alan"]
+position = Vector2(1.75, -13)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_27sgd")
+texture = ExtResource("3_m07aq")
+fixed_fps = 25
+
+[node name="ProlougeIntroBg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(17, -13)
+scale = Vector2(4, 4)
+texture = ExtResource("5_045kf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u5ksp")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="con1" type="Label" parent="Control"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = 58.0
+offset_right = 117.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("7_7lvry")
+theme_override_font_sizes/font_size = 24
+text = "Many Years Later..."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = 5
+layout_mode = 0
+offset_left = -975.0
+offset_top = -536.0
+offset_right = 943.0
+offset_bottom = 607.0
+color = Color(0, 0, 0, 0)
